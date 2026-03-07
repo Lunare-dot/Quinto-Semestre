@@ -10,7 +10,7 @@ int main() {
     printf("Insira um numero de cinco digitos: ");
     scanf("%d", &num);
 
-    if (validador(&num) == 1) {
+    if(validador(&num) == 1) {
         return 1;
     } else {
         while(num > 0) {
