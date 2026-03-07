@@ -61,7 +61,7 @@ int main() {
     }
 }
 
-/*Bubble Sort em ordem crescente: Se o elemento atual for maior que o próximo, o algoritmo irá:
-Passar o valor do elemento atual para uma variável auxiliar (temp = x[j]),
+/*Bubble Sort: Se o elemento atual for maior que o próximo, o algoritmo irá
+passar o valor do elemento atual para uma variável auxiliar (temp = x[j]),
 em sequência irá passar o valor do próximo elemento (x[j + 1]) para o atual (x[j]) e, por fim,
 irá passar o valor temporário para o x[j + 1], repetindo até que a ordenação esteja completa*/
