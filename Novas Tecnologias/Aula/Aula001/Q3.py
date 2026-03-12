@@ -1,4 +1,4 @@
-print("Usando operadores e números pequenos:\n")
+print("Usando vários operadores e números pequenos:\n")
 x = 10**2 / 2 // 5 * 2 % 2 + 8 - 1
 print(int(x))
 
