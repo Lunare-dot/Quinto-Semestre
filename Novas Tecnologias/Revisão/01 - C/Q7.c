@@ -13,3 +13,5 @@ int main() {
     printf("Aproximacao: %.10f", pi);
     return 0;
 }
+
+//Incompleta
