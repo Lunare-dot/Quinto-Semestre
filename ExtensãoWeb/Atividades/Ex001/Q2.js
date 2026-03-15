@@ -50,6 +50,5 @@ function getAttribute(sequence) {
             console.log(`${botNum} vence ${playerNum}. Vitória do computador!\nJoguem novamente.`);
             continue;
         }
-
     }
 })();

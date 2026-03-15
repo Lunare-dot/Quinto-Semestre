@@ -10,18 +10,15 @@
         input.value = "";
         console.log(`User entry: ${uEntry}`);
 
-        triangle = "";
+        let triangle = "";
         for(let i = 0; i < uEntry; i++) {
             triangle+=("\n");
             for(let j = 0; j <= i; j++) {
                 triangle+=("*");
             }
         }
-        //messageArea apenas para visualização melhor do problema.
-        messageArea.style.whiteSpace = "pre-wrap";
-        messageArea.textContent = triangle;
-        messageArea.style.color = "black";
-        //O .log() é a visualização correta da resposta da questão quatro.
+        messageArea.textContent = "Verifique o log para obter o resultado!";
+        messageArea.style.color = "green";
         console.log(triangle);
     });
 })();

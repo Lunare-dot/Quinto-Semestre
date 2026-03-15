@@ -6,7 +6,6 @@ function getRandomInt(min, max) {
 
 (function() {
     var rNum = (getRandomInt(1, 20));
-    console.log("Random Number: ", rNum);
 
     const form = document.getElementById('contactForm');
     const messageArea = document.getElementById('message');
