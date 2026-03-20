@@ -6,7 +6,7 @@ def main():
 
     for i in range(len(words)):
         if words[i].lower() == term.lower():
-            return print(f"Termo encontrado no índice {i + 1}!")
+            print(f"{term} encontrando no índice {i + 1}!")
             found = True
             break
 
