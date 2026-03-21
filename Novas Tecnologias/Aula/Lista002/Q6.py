@@ -1,7 +1,6 @@
 def main():
-    loop = 5
-    aOpen = tBool = eBool = False
-    while loop > 1:
+    aberto = triado = encaminhado = False
+    while True:
         uEntry = input("""\nVocê está simulando um atendimento. Comandos:
         A -> Abrir atendimento
         T -> Triagem
@@ -12,34 +11,44 @@ def main():
     
         match uEntry:
             case "A":
-                print("\nAtendimento aberto.")
-                aOpen =  True
-                loop -= 1
+                if aberto:
+                    print("\nO atendimento já está aberto.")
+                else:
+                    print("\nAtendimento aberto.")
+                    aberto =  True 
             case "T":
-                if aOpen:
+                if not aberto:
+                    print("\nErro: Abra o atendimento antes de começar a triagem (comando A).")        
+                elif triado:
+                    print("\nA triagem já está em andamento.")
+                else:
                     print("\nTriagem em andamento...")
-                    tBool = True
-                    loop -= 1
-                else:
-                    print("\nRequisitos não atendidos. Execute etapas anteriores antes da triagem.")
+                    triado = True
             case "E":
-                if tBool and aOpen:
-                    print("\nVocê será encaminhado para...")
-                    eBool = True
-                    loop -= 1
+                if not aberto:
+                    print("\nErro: Abra o atendimento primeiro (comando A).")
+                elif not triado:
+                    print("\nErro: Realize a triagem antes de encaminhar (comando T).")
+                elif encaminhado:
+                    print("\nPaciente já encaminhado.")
                 else:
-                    print("\nRequisitos não atendidos. Execute etapas anteriores antes de encaminhar.")
+                    print("\nPaciente encaminhado com sucesso!")
+                    encaminhado = True
             case "F":
-                if eBool and tBool and aOpen:
-                    print("\nAtendimento finalizado!")
-                    loop -= 1
+                if not aberto:
+                    print("\nErro: Abra o atendimento primeiro (comando A).")
+                elif not triado:
+                    print("\nErro: Realize a triagem antes de finalizar (comando T).")
+                elif not encaminhado:
+                    print("\nErro: Encaminhe o paciente antes de finalizar (comando E).")
                 else:
-                    print("\nRequisitos não atendidos. Execute etapas anteriores antes de finalizar")
+                    print("\nAtendimento finalizado com sucesso!")
+                    aberto = triado = encaminhado = False
             case "S":
-                print("Serviço de atendimento: Off")
-                loop = 0
+                print("\nServiço de atendimento: Off")
+                break
             case _:
-                print("Comando inválido!")
+                print(f"\nComando {uEntry} inválido! Use A, T, E, F ou S.")
 
 if __name__ == "__main__":
     main()
