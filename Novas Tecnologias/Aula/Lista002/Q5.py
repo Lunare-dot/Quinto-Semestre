@@ -1,6 +1,6 @@
 def main():
-    iEntry = int(input("Digite o valor inicial: "))
-    fEntry = int(input("Digite o valor final: "))
+    iEntry = int(input("Digite o valor inicial (a): "))
+    fEntry = int(input("Digite o valor final (b): "))
     pEntry = int(input("Digite o passo: "))
     
     if pEntry == 0:
