@@ -13,7 +13,7 @@ function main() {
 function minMaxButton(b1, b2) {
     const messageArea1 = document.getElementById('m1');
     messageArea1.style.color = "black";
-    var num = 0;
+    let num = 0;
 
     b1.onclick = function(event) {
         event.preventDefault();
