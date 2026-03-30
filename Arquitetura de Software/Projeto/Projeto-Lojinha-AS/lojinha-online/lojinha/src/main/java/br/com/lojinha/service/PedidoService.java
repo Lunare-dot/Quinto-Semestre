@@ -9,12 +9,27 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+import org.springframework.stereotype.Service;
+
 /**
  * Service responsável por gerenciar pedidos.
  */
+@Service
 public class PedidoService {
+    @JsonManagedReference
     private List<Pedido> pedidos = new ArrayList<>();
-    private ProdutoService produtoService;
+    private final ProdutoService produtoService;
+
+    /**
+     * Injeta o ProdutoService para a verificação de estoque durante a criação de pedidos.
+     * @param produtoService Service de produtos a ser injetado.
+     */
+    @Autowired
+    public PedidoService(ProdutoService produtoService) {
+        this.produtoService = produtoService;
+    }
 
     /**
      * Retorna lista completa de pedidos.
@@ -22,6 +37,20 @@ public class PedidoService {
      */
     public List<Pedido> listarPedidos() {
         return pedidos;
+    }
+
+    /**
+     * Busca um pedido pelo ID.
+     * @param id id do pedido a ser buscado.
+     * @return O pedido ou lança uma exceção caso nada seja encontrado.
+     */
+    public Pedido buscarPorId(String id) {
+        for(Pedido pedido : pedidos) {
+            if(pedido.getId().equals(id)) {
+                return pedido;
+            }
+        }
+        throw new IllegalArgumentException("Pedido não encontrado.");
     }
 
     /**

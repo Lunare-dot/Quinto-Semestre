@@ -4,10 +4,13 @@ import br.com.lojinha.model.Cliente;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 /**
  * Service responsável pela gestão dos clientes.
  * Os clientes estáticos são incializados diretamente nessa classe.
  */
+@Service
 public class ClienteService {
     private List<Cliente> clientes = new ArrayList<>();
 
@@ -50,7 +53,7 @@ public class ClienteService {
      * @param endereco Endereço do cliente.
      */
     public void cadastrarCliente(String nome, String cpf, String email, String endereco) {
-        validarCPFCPF(cpf);
+        validarCpfDuplicado(cpf);
         clientes.add(new Cliente(nome, cpf, email, endereco));
     }
 
@@ -58,7 +61,7 @@ public class ClienteService {
      * Verifica se já existe um cliente com o CPF informado.
      * @param cpf CPF a ser validado.
      */
-    public void validarCPFCPF(String cpf) {
+    private void validarCpfDuplicado(String cpf) {
         if(buscarCPF(cpf) != null) {
             throw new IllegalArgumentException("Esse cpf já foi cadastrado.");
         }

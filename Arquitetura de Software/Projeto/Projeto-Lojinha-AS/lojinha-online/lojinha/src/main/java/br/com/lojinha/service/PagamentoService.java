@@ -8,9 +8,12 @@ import br.com.lojinha.model.Pedido;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 /**
  * Service responsável por gerenciar pagamentos.
  */
+@Service
 public class PagamentoService {
     private List<Pagamento> pagamentos = new ArrayList<>();
 
@@ -39,7 +42,14 @@ public class PagamentoService {
 
         Pagamento.StatusPag status = aprovado ? Pagamento.StatusPag.APROVADO : Pagamento.StatusPag.RECUSADO;
         Pagamento pagamento = new Pagamento(metodo_pg, valorTotal, status, pedido);
+        pagamentos.add(pagamento);
 
+        if(!aprovado) {
+            throw new IllegalArgumentException("Pagamento recusado. Verifique os dados inseridos e tente novamente.");
+        }
+
+        processarCompra(pedido);
+        finalizarCompra(pedido);
         return pagamento;
     }
 
