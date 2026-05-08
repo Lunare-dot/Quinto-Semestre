@@ -2,13 +2,18 @@ const express = require('express')
 const app = express()
 const port = 3000
 
+//trabalhar com arquivos estáticos
+app.use(express.static('public'));
+
 //rotas -- rota padrão (/)
 app.get('/', (req, res) => {
-  res.send('Hello World!')
+  //res.send('Hello World!')
+  res.sendFile(__dirname + '/public/Html/index.html');
 })
 
 app.get('/sobre', (req, res) => {
-  res.send('Página Sobre!')
+  //res.send('Página Sobre!')
+  res.sendFile(__dirname + '/public/Html/sobre.html');
 })
 
 app.listen(port, () => {
