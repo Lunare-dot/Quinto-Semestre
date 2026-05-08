@@ -9,6 +9,7 @@
   "author": "Lunare-Dot",
   "license": "ISC",
   "dependencies": {
+    "@ljharb/tsconfig": "^0.3.2",
     "express": "^5.2.1"
   }
 }
