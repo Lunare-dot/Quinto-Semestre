@@ -1,17 +1,19 @@
-def fCount(list, min):
-    count = {}
+from typing import List, Dict
+
+def fCount(values: List[int], threshold: int) -> List[int]:
+    count: Dict[int, int] = {}
     
-    for num in list:
+    for num in values:
         if num in count:
             count[num] += 1
         else:
             count[num] = 1
             
-    x = []
+    x: List[int] = []
     for num, freq in count.items():
-        if freq >= min:
+        if freq >= threshold:
             x.append(num)
-            
+        
     return x
     
     

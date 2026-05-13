@@ -1,6 +1,8 @@
-def listOrd(inter):
+from typing import List, Tuple
+
+def listOrd(inter: List[Tuple[int, int]]) -> List[Tuple[int, int]]:
     inter.sort(key=lambda x: x[0])
-    list = []
+    list: List[Tuple[int, int]] = []
     
     cStart, cEnd = inter[0]
     for start, end in inter[1:]:
