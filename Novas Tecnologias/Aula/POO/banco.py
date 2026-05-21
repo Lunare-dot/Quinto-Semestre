@@ -1,7 +1,7 @@
 class Conta:
     #método reservado, vai inicializar o objeto da classe Conta
     def __init__(self, numero, cliente, saldo, limite=1000.0):
-        self.numero = numero
+        self.__numero = numero
         self.titular = cliente
         self.saldo = saldo
         self.limite = limite
@@ -9,6 +9,13 @@ class Conta:
 	# o método __new__() é realmente o construtor
 	# o método __init__() é o responsável por inicializar o objeto
 	# self é a referencia do objeto
+
+    @property
+    def numero(self):
+        return self.__numero
+    @numero.setter
+    def numero(self, numero):
+        self.__numero = numero
 	
     def deposita(self, valor):
         self.saldo+=valor
@@ -31,8 +38,8 @@ class Conta:
             destino.deposita(valor)
             return True
         
-    def __str__(self):
-        print(self.numero, self.titular, self.saldo, self.limite)
+#    def __str__(self):
+#        print(self.numero, self.titular, self.saldo, self.limite)
 
 class Cliente:
     
