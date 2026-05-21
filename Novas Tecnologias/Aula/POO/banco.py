@@ -1,10 +1,14 @@
 class Conta:
+    __slots__=['__numero', 'titular', 'saldo', 'limite']
+    _total_contas = 0
+
     #método reservado, vai inicializar o objeto da classe Conta
     def __init__(self, numero, cliente, saldo, limite=1000.0):
         self.__numero = numero
         self.titular = cliente
         self.saldo = saldo
         self.limite = limite
+        Conta._total_contas += 1
             
 	# o método __new__() é realmente o construtor
 	# o método __init__() é o responsável por inicializar o objeto
@@ -38,11 +42,17 @@ class Conta:
             destino.deposita(valor)
             return True
         
-#    def __str__(self):
-#        print(self.numero, self.titular, self.saldo, self.limite)
+    def __str__(self):
+        print(self.__numero, self.titular, self.saldo, self.limite)
+
+#    @staticmethod
+    @classmethod
+    def get_total_contas(cls):
+        return cls._total_contas
 
 class Cliente:
-    
+    __slots__ = ['nome', 'sobrenome', 'cpf']
+
     def __init__(self, nome, sobrenome, cpf):
         self.nome = nome
         self.sobrenome = sobrenome
