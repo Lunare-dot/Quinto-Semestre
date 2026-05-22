@@ -15,9 +15,9 @@ app.get('/', (req, res)=>{
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
-//puxar as rotas de API de usuários
-const apiRoutes = require('./routes/api')
-app.use('/api/users', apiRoutes);
+const apiRoutes = require('./routes/api') //puxar as rotas de API de usuários
+app.use(express.json()); //tratar requisição JSON
+app.use('/api/users', apiRoutes); //alcançar as rotas criadas no arquivo "api.js"
 
 app.listen(port, ()=>{
     console.log("servidor funcionando");
