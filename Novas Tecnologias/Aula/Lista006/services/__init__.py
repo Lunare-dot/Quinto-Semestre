@@ -1,0 +1,1 @@
+from .contato_service import ContatoService
