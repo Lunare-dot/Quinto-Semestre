@@ -13,6 +13,8 @@ class Contato:
         if isinstance(data, datetime.date):
             return data
         elif isinstance(data, str):
+            data = data.strip()
+            data = data.replace("-", "/")
             return datetime.datetime.strptime(data, "%d/%m/%Y").date()
         else:
             raise TypeError("A data de nascimento deve ser string ou datetime.date (d/m/a)")

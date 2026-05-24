@@ -1,6 +1,8 @@
 from services import ContatoService
+from services import EmergenciaService
 
 def main():
+    
     while True:
         user_entry = input(f"\nEscolha uma opção (1 ~ 4): \n"
         f"1 - Criar, editar e listar contatos\n"
@@ -45,9 +47,11 @@ def main():
                         ContatoService.listar()
                         continue
                     case 4:
+                        #print(f"Número de eventos: {eventos}")
                         return           
                 
             case 2:
+                EmergenciaService.criar()
                 continue
                 
             case 3:
@@ -55,9 +59,6 @@ def main():
                 
             case 4:
                 break
-                
-            case _:
-                continue
     
 if __name__ == "__main__":
     main()

@@ -1,5 +1,6 @@
 from entity.contato import Contato
 from entity.agenda import Agenda
+from entity.contatoemergencia import ContatoEmergencia
 
 class ContatoService:
 
@@ -18,7 +19,10 @@ class ContatoService:
     @staticmethod
     def listar():
         for c in Agenda.contatos():
-            print(f"\n{c}")
+            if isinstance(c, ContatoEmergencia):
+                print(f"\n[EMERGÊNCIA]:\n{c}")
+            else:
+                print(f"\n{c}")
             
     @staticmethod
     def editar():
