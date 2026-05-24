@@ -18,7 +18,13 @@ class ContatoService:
         
     @staticmethod
     def listar():
-        for c in Agenda.contatos():
+        contatos = Agenda.contatos()
+        
+        if not contatos:
+            print("\nNenhum contato cadastrado!\n")
+            return
+        
+        for c in contatos:
             if isinstance(c, ContatoEmergencia):
                 print(f"\n[EMERGÊNCIA]:\n{c}")
             else:
@@ -35,7 +41,7 @@ class ContatoService:
         for i, contato in enumerate(contatos):
             print(f"\n{i} - {contato}")
         
-        index = int(input("\nSelecione o contato a ser editado: \n"))
+        index = int(input(f"\nSelecione o contato a ser editado: \n"))
         contato = contatos[index]
         
         novo_nome = input("Nome: ")
