@@ -10,3 +10,12 @@ class ContatoEmergencia(Contato):
     @property
     def prioridade(self) -> bool:
         return self._prioridade
+    
+    def __str__(self):
+        if self.prioridade:
+            prioridade = "ALTA"
+            
+        return (
+            f"{super().__str__()}\n"
+            f"Prioridade: {prioridade}"
+        )

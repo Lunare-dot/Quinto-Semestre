@@ -9,9 +9,8 @@ class EmergenciaService:
         telefone = input("Telefone do contato de emergência: ")
         datanasc = input("Data de nascimento do contato de emergência: ")
         email = input("Email do contato de emergência: ")
-        prioridade = "ALTA"
         
-        contato_emergencia = ContatoEmergencia(nome, telefone, datanasc, email, prioridade)
+        contato_emergencia = ContatoEmergencia(nome, telefone, datanasc, email)
         
         Agenda(contato_emergencia)
         print("Contato de emergência criado com sucesso!")
