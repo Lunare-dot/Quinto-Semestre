@@ -1,0 +1,284 @@
+\documentclass[fleqn, 12pt]{article}
+\usepackage{amsmath,amsthm,amssymb,amsfonts,setspace}
+\setlength{\mathindent}{0pt}
+\usepackage[utf8]{inputenc}
+\usepackage[brazil]{babel}
+
+\textwidth 7.0 truein
+\oddsidemargin -0.25in   %left-hand edge
+\evensidemargin -0.5 truein  %right-hand edge
+\topmargin -0.85in      %top of paper to top of head, pulls whole unit
+\textheight 9.5in
+
+%%%% In most cases you won't need to edit anything above this line %%%%
+
+\begin{document}
+\hfill Matheus Ferreira Souza 
+
+\hfill Lista - 004
+
+\hfill Folha de respostas
+
+
+\begin{itemize}
+\item[1)] Ex001 -\\Parâmetros: $\mu = 240\,\text{ms}\,;\,\sigma=35\,\text{ms}$\\
+
+\textbf{a)}
+\begin{align*}
+    P&(X<T) = 0,92\\
+    X&= \mu + z\sigma\\
+    &= 240 + (1,41 * 35)\\
+    &= 240 +49,35 = 289,35\,\text{ms}
+\end{align*}
+
+
+\textbf{b)}
+\begin{align*}
+    Z &= \frac{200 - 240}{35}= -40/35 = - 1,14\\
+    Z&= \frac{280 - 240}{35}= 40/35 = 1,14\\\\
+    P&(200 \leq X \leq 280) \rightarrow P(-1,14 \leq X \leq 1,14)\\
+    P&= 0,8729 - 0,1271\\
+    &=0,7488 \rightarrow P = 74,88\%
+\end{align*}
+
+
+\textbf{c)}
+\begin{align*}
+    P&(X > 300) = P\left(Z = \frac{300 - 240}{35}\right)\\
+    P&= 60/35 = 1,71\\\\
+    P&(X > 300) \rightarrow P(Z > 1,71)\\
+    &= 0,9564\\
+    &=1 - 0,9564 = 0,0436\\
+    P&=n * p\\
+    &= 10.000 * 0,0436 = 436
+\end{align*}
+
+
+\textbf{d)}
+\begin{align*}
+    P&(X \leq x) = 0,99 \rightarrow Z_{0,99} = 2,33\\
+    X &= \mu + z\sigma\\
+    &= 240 + (2,33 * 35)\\
+    &= 240 + 81,55 = 321,55\,\text{ms}
+\end{align*}
+
+\item[2)] Ex002 -\\
+
+\textbf{a)}
+\begin{align*}
+    \text{Equipe A:}\\ 
+    CV &=\frac{4}{18} * 100\\
+    &=0,2222 * 100\\
+    &= 22,22\%\\
+    \text{Equipe B:}\\
+    CV &=\frac{9}{25} * 100\\\
+    &= 0,36 * 100\\
+    &= 36\%
+\end{align*}
+A equipe A apresenta maior consistência relativa por ter um coeficiente de variação menor.\\
+
+\textbf{b)}
+\begin{align*}
+    Z_A &= \frac{26 - 18}{4} = 2\\\\
+    Z_B &= \frac{37 - 25}{9} = 1,33
+\end{align*}
+O desenvolvedor A foi o mais excepcional porque seu resultado está mais distante da média da própria equipe.\\
+
+\textbf{c)}
+\begin{align*}
+    P&(X > 25) \rightarrow P\left(Z = \frac{25 - 18}{4}\right)\\
+    P &= 7/4 = 1,75\\
+    &= 0,9599\\
+    &= 1 - 0,9599 = 0,0401
+\end{align*}
+A probabilidade de um integrante da equipe A produzir mais que a média da equipe B é de 4,01\%.\\
+
+\textbf{d)}
+\begin{align*}
+    &\mu \pm 2\sigma \rightarrow 25\pm(2*9)\\
+    &25 + 18 = 43\\
+    &25 - 18 = 7
+\end{align*}
+Aproximadamente 95\% dos desenvolvedores entregariam entre 7 e 43 tarefas por dia.\\
+
+\item[3)] Ex003 -\\ Parâmetros: $\mu = 14\,;\,\sigma =3$\\
+
+\textbf{a)}
+\begin{align*}
+    P&(X > x) =0,02 \rightarrow P(X > x) = 0,98\\
+    X &= 14 + (2,05 * 3)\\
+    &= 14 + 6,15 = 20,15\\
+    &\approx 21
+\end{align*}
+O dia se torna instável a partir de 21 falhas.\\
+
+\textbf{b)}
+\begin{align*}
+    Z &= \frac{10 - 14}{3}= -4/3 = -1,33\\
+    Z & = \frac{18 - 14}{3}= 4/3 = 1,33\\\\
+    P&(-1,33 \leq X \leq 1,33)\\
+    P &= 0,9082 - 0,0918 = 0,8164
+\end{align*}
+A probabilidade de ocorrerem entre 10 e 18 falhas é de 81,64\%.
+
+\textbf{c)}
+\begin{align*}
+    E = 180 * 0,02 \approx 4
+\end{align*}
+São esperados 4 dias instáveis em um período de 180 dias.\\
+
+\textbf{d)}
+Embora a média do sistema permaneça inalterada, o aumento do desvio padrão indica maior dispersão dos dados em torno da média. Isso implica maior variabilidade no número de falhas diárias, redução de previsibilidade e aumento da probabilidade de ocorrência de valores extremos. Consequentemente, o comportamento do sistema torna-se menos estável e menos consistente.\newpage
+
+\item[4)] Ex004 -\\ Parâmetros: $\mu = 80 \,;\, \sigma = 12$\\
+
+\textbf{a)}
+\begin{align*}
+    P&(N \geq 95) \rightarrow P(X \geq 94,5)\\\\
+    Z&=\frac{94,5 - 80}{12}=14,5/12 = 1,21\\\\
+    P&(Z \geq 1,21) \approx 0,8869\\
+    &=1 - 0,8869 = 0,1131
+\end{align*}
+Existe cerca de 11,31\% chance de ocorrerem pelo menos 95 erros.\\
+
+\textbf{b)}
+\begin{align*}
+    P&(69,5 \leq X \leq 85,5)\\
+    Z&=\frac{69,5 - 80}{12}=-10,5/12 = -0,88\\
+    Z&=\frac{85,5 - 80}{12}=5,5/12 = 0,46\\\\
+    P&(Z\leq-0,88)\approx0,1894\\
+    P&(Z\leq0,46)\approx0,6772\\
+    P&=0,6772 - 0,1894 \approx 0,4878
+\end{align*}
+Existe cerca de 48,78\% de chance de uma build apresentar entre 70 e 85 erros.\\
+
+\textbf{c)}
+\begin{align*}
+    P&(89,5 \leq X \leq 90,5)\\
+    Z&=\frac{89,5 - 80}{12}=9,5/12\approx0,79\\
+    Z&=\frac{90,5 - 80}{12}=10,5/12\approx0,88\\\\
+    P&(Z\leq 0,79) = 0,7852\\
+    P&(Z\leq 0,88) =0,8106\\
+    P &= 0,8106 - 0,7852 = 0,0254
+\end{align*}
+A probabilidade de uma build possuir exatamente 90 erros é de 2,54\%.\\
+
+\textbf{d)}
+A correção de continuidade melhora a aproximação normal porque a distribuição normal é contínua, enquanto muitos problemas reais, como uma quantidade de erros, são discretos. O ajuste de 0,5 unidade torna a área da curva normal mais próxima dos valores inteiros reais, aumentando a precisão da aproximação.
+
+\item[5)] Ex005 -\\Parâmetros: $\sigma = 2,8\,\text{horas}$
+
+\textbf{a)}
+\begin{align*}
+    n&=\left (\frac{1,96 * 2,8}{0,4} \right)^2\\
+    n&=\left (\frac{5,48}{0,4} \right)^2 = 13,72^2 \approx 188,24\\
+    n&=189
+\end{align*}
+
+\textbf{b)}
+\begin{align*}
+    n&=\left (\frac{2,576 * 2,80}{0,2} \right)^2\\
+    n&=\left (\frac{7,2128}{0,2} \right)^2 = 36,064^2 \approx 1300,61\\
+    n&=1301
+\end{align*}
+
+\textbf{c)}
+O aumento drástico do tamanho da amostra ocorre porque reduzir a margem de erro pela metade quadruplica a amostra. Outro fator importante é que aumentar o nível de confiança também aumenta o valor crítico Z, ampliando o tamanho necessário da amostra.\newpage
+
+\item[6)] Ex006 -\\Parâmetros: $Z_{\alpha/2} = 2,326\,;\,E =0,025$\\
+
+\textbf{a)}
+\begin{align*}
+    n&=\frac{2,326^2 * 0,5 * 0,5}{0,025^2}\\
+    &=\frac{5,410276*0,25}{0,000625}\\
+    &=1,352569/0,000625\\
+    &=2164,11\\\\
+    n&=2165
+\end{align*}
+
+\textbf{b)}
+Parâmetros: p=0,18\,;\,q=0,82\\
+\begin{align*}
+    n&=\frac{2,326^2*0,18*0,82}{0,025^2}\\
+    &=\frac{5,410276*0,1476}{0,000625}\\
+    &=0,7985567376/0,000625\\
+    &=1277,69\\\\
+    n&=1278
+\end{align*}
+
+\textbf{c)}
+Usar p = 0,5 é considerado o cenário mais conservador porque esse valor gera a maior variabilidade possível nos resultados da pesquisa, como consequência, o cálculo exige a maior quantidade de entrevistas. Dessa forma, mesmo sem possuir uma estimativa prévia da proporção real, a amostra calculada ainda será suficiente para garantir o nível de confiança e o erro desejado.\\
+
+\textbf{d)}
+\begin{align*}
+    E&=Z_{\alpha/2}\sqrt{\frac{p(1-p)}{n}} \rightarrow E = 2,326\sqrt{\frac{0,5*(1-0,5)}{600}}\\
+    &=2,326\sqrt{\frac{0,25}{600}}\\
+    &=2,326\sqrt{0,0004167} = 2,326*0,02041\\
+    E&\approx0,0475\\\\
+    E&=4,75\%
+\end{align*}
+\newpage
+\item[7)] Ex007 -
+
+\textbf{a)}
+A amostragem estratificada é mais adequada porque os setores possuem características diferentes e variabilidades distintas. Dividir a população em estratos homogêneos reduz a variância das estimativas e melhora a precisão da média estimada da produtividade. Além disso, garante representação adequada de todos os setores da empresa.\\
+
+\textbf{b)}
+\begin{align*}
+    180&*6=1080\\
+    120&*8=960\\
+    60&*12=720\\
+    40&*5=200
+\end{align*}
+Os setores backend e frontend possuem a maior influência na variabilidade global, pois combinam grande quantidade de funcionários com desvios padrão relativamente elevados. O setor de dados possui alta variabilidade individual, mas menor impacto total devido ao tamanho reduzido do estrato.\\
+
+\textbf{c)}
+Na alocação ótima, os estratos recebem quantidades de amostra proporcionais ao tamanho e à variabilidade de cada setor. Assim, setores maiores e mais heterogêneos recebem mais observações, pois contribuem mais para a variância total da estimativa.\\
+
+\textbf{d)}
+A alocação uniforme distribui o mesmo número de amostras para todos os setores, ignorando diferenças de tamanho e variabilidade, o que pode gerar desperdício de observações e menor precisão. Já a alocação proporcional ajusta a amostra ao tamanho de cada setor, representando melhor a população.
+
+\newpage
+\item[8)] Ex008 - Parâmetros: $\mu=3,2\,\text{s}\,;\,\sigma=0,7\,\text{s}\,;\,p=0,22\,;\,q=0,78$
+
+\textbf{a)}
+\begin{align*}
+    P&(X>5)\\
+    Z&=\frac{5-3,2}{0,7} = 1,8/0,7\approx2,57\\\\
+    P&(Z>2,57) \rightarrow P(Z<2,57) = 0,9949\\
+    &=1-0,9949 =0,0051\\\\
+    P&(X>5)=0,51\%
+\end{align*}
+
+\textbf{b)}
+\begin{align*}
+    &\mu\pm2\sigma \rightarrow 3,2\pm2(0,7)\\
+    &\text{Limite inferior:}\;3,2-1,4=1,8\,\text{s}\\
+    &\text{Limite superior:}\;3,2+1,4=4,6\,\text{s}\\\\
+    &P(1,8\,\text{s}\leq X\leq4,6\,\text{s})
+\end{align*}
+
+\textbf{c)}
+Parâmetros: $Z_{0,90}\approx1,28$\\
+\begin{align*}
+    X&=\mu+Z\sigma\\
+    &=3,2+(1,28*0,7) =3,2+0,896\\
+    &=4,10\\\\
+    P&_{90}\approx4,1\,\text{s}
+\end{align*}
+
+\textbf{d)}
+\begin{align*}
+    n&=\frac{Z^2pq}{E^2} \rightarrow \frac{2,576^2*0,22*0,78}{0,015^2}\\
+    &=\frac{6,635776*0,1716}{0,000225}\\
+    &=1,1391/0,000225\\
+    n&\approx5062,7\\\\
+    n&=5063
+\end{align*}
+
+\textbf{e)}
+O erro amostral impacta mais fortemente o tamanho da amostra, pois aparece no denominador da fórmula elevado ao quadrado. Assim, pequenas reduções no erro produzem grandes aumentos na amostra necessária. Já o nível de confiança altera apenas o valor crítico Z, causando impacto relativamente menor.
+
+\end{itemize}
+
+\end{document}
