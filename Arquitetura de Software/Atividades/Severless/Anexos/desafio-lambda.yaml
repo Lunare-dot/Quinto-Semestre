@@ -1,0 +1,15 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'Desafio - Introdução à Arquitetura Serverless para AWS Academy'
+
+Resources:
+  # 1. Bucket inicial
+  BucketEntrada:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'arquivos-entrada-${AWS::AccountId}'
+
+  # 2. Bucket onde vocês verão o resultado
+  BucketSaida:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: !Sub 'arquivos-saida-${AWS::AccountId}'
