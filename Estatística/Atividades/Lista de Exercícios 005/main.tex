@@ -1,0 +1,180 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=2cm, right=2cm]{geometry}
+\usepackage[portuguese]{babel}
+
+\usepackage{amsmath,amsthm,amssymb,amsfonts,setspace}
+\usepackage{enumitem}
+\usepackage{tcolorbox}
+
+\textwidth 7.0 truein
+\oddsidemargin -0.25in   %left-hand edge
+\evensidemargin -0.5 truein  %right-hand edge
+\topmargin -0.85in      %top of paper to top of head, pulls whole unit
+\textheight 9.5in
+
+%%%% In most cases you won't need to edit anything above this line %%%%
+
+\begin{document}
+\hfill Matheus Ferreira Souza — UC24203003
+
+\hfill Estatística
+
+\hfill Lista de exercício 5
+
+\begin{tcolorbox}[colback=gray!10, colframe=black, title=Observação:]
+Alguns valores críticos da distribuição Normal Padrão, como $z=1,96$ para
+95\% de confiança, foram apresentados diretamente por serem valores bastante
+conhecidos e recorrentes em exercícios da disciplina. Dessa forma, evitam-se
+consultas repetitivas à tabela e cálculos desnecessários ao longo da resolução.
+\end{tcolorbox}
+
+\vspace{1em}
+
+\section{Exercício 1}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Resposta:}\\
+    O parâmetro de interesse é a média populacional do tempo de execução do algoritmo.
+    
+    \item \textbf{Resposta:}\\
+    O estimador utilizado é a média amostral $(\bar{X})$.
+    
+    \item \textbf{Resposta:}\\
+    A estimativa média populacional é a própria média da amostra: $\bar{x} = 2,8s$.
+\end{enumerate}                   
+
+\section{Exercício 2}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Resposta:}\\
+    Ambos os estimadores possuem a propriedade de imparcialidade:\\
+    $E(\hat{\theta}_1) = \mu$\\$E(\hat{\theta_2}) = \mu$\\
+    \\Ou seja, os dois estimadores produzem o mesmo valor correto.
+    
+    \item \textbf{Resposta:}\\
+    O $\hat{\theta_2}$ deve ser preferido.
+    
+    \item \textbf{Resposta:}\\
+    Embora ambos sejam imparciais, o segundo estimador possui menor variância:\\
+    $Var(\hat{\theta}_1) = 25$\\x\\$Var(\hat{\theta}_2) = 9$\\
+    \\Menor variância == valor verdadeiro mais próximo de $\mu$.
+    
+\end{enumerate}
+
+\section{Exercício 3}
+\textbf{Resposta:}
+\begin{align*}
+    &4,2 \pm 1,96 * (1,5/\sqrt{100})\\
+    &LS = 4,2 + 0,294 \approx 4,49\\
+    &LI = 4,2 - 0,294 \approx 3,91\\
+    \\&IC[3,91;4,49]\\
+\end{align*}
+
+Com 95\% de confiança, a média populacional do tempo diário de uso da plataforma está entre 3,91 e 4,49 horas.
+
+\section{Exercício 4}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Resposta:}\\
+    Sim, pois $99\%$ está contido dentro do intervalo $IC[98,2\%\:;\:99,4\%]$
+    
+    \item \textbf{Resposta:}\\
+    Não, o valor $97,5\%$ não é compatível com os dados porque é menor que o limite inferior do intervalo $(98,2\%)$, logo está fora do intervalo de confiança.
+    
+    \item \textbf{Resposta:}\\
+    Um intervalo de $95\%$ de confiança significa que, se você repetir o mesmo estudo e/ou coleta de dados várias vezes sob as mesmas condições, cerca de $95\%$ desses intervalos terão o valor real e verdadeiro da população. 
+\end{enumerate}
+
+\section{Exercício 5}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Resposta:}\\
+    $H_0:\mu \leq 500hrs$ 
+    
+    \item \textbf{Resposta:}\\
+    $H_1: \mu > 500hrs$
+    
+    \item \textbf{Resposta:}\\
+    Unilateral à direita, porque o interesse é saber se o resultado é superior a 500 horas.
+\end{enumerate}
+
+\section{Exercício 6}
+\begin{enumerate}[label=\alph*)]
+    \item \textbf{Resposta:}\\
+    $H_0: \mu = 12$
+    
+    \item \textbf{Resposta:}\\
+    $H_1: \mu \neq 12$ 
+    
+    \item \textbf{Resposta:}\\
+    Bilateral porque uma diferença para mais ou para menos é igualmente relevante.
+    
+    \item \textbf{Resposta:}\\
+    A região crítica é composta por qualquer valor de $Z$ calculado que seja menor que $-1,96$ ou maior que $1,96$.
+    \[
+    RC = \{z < -1,96 \text{ ou } z > 1,96\}
+    \]
+\end{enumerate}
+
+\section{Exercício 7}
+\begin{enumerate}
+    \item \textbf{Resposta:}\\
+    $H_0: \mu = 2s$\\$H_1: \mu \neq 2s$
+    
+    \item \textbf{Resposta:}
+    \begin{align*}
+        &E = \frac{\sigma}{\sqrt{n}}\\
+        &E = \frac{0,8}{\sqrt{64}} = \frac{0,8}{8} = 0,1s
+    \end{align*}
+
+    \begin{align*}
+        &Z = \frac{\bar{x} - \mu}{E}\\
+        &Z = \frac{2,3 - 2}{0,1} = \frac{0,3}{0,1} = 3
+    \end{align*}
+    
+    \item \textbf{Resposta:}\\
+    Região de rejeição: $z < -1,96$ ou $z > 1,96$\\
+    Como $Z = 3 > 1,96$, rejeita-se a $H_0$.
+    
+    \item \textbf{Resposta:}\\
+    Rejeita-se a hipótese nula ($H_0$) ao nível de significância de 5\%. Existem evidências estatísticas suficentes para afirmar que o tempo médio de carregamento é diferente de 2 segundos.
+\end{enumerate}
+
+\section{Exercício 8}
+\begin{enumerate}
+    \item \textbf{Resposta:}\\
+    $H_0: \mu \geq 15s$\\
+    $H_1: \mu < 15s$
+    
+    \item \textbf{Resposta:}
+    \begin{align*}
+        &E = \frac{\sigma}{\sqrt{n}}\\
+        &E = \frac{3,6}{\sqrt{81}} = \frac{3,6}{9} = 0,4s
+    \end{align*}
+
+    \begin{align*}
+        &Z = \frac{\bar{x} - \mu}{E}\\
+        &Z = \frac{14,2 -  15}{0,4} = \frac{-0,8}{0,4} = -2\\[1em]
+    \end{align*}
+    
+    \item \textbf{Resposta:}\\
+    Se $\alpha = 1\%$ então $z_c = -2,33$\\
+    Logo: $RC = \{z < -2,33\}$
+    
+    \item \textbf{Resposta:}\\
+    Como $-2 > -2,33$, a estatística de teste não pertence a região crítica. Portanto, não se rejeita $H_0$.
+    
+    \item \textbf{Resposta:}\\
+    A nível de significância de 1\% não existem evidências estatísticas suficientes para afirmar que a nova versão reduziu o tempo médio de processamento do sistema.
+\end{enumerate}
+
+\section{Exercício 9}
+$t_{\alpha/2;24} = t_{0,025;24} = 2,064$
+
+\begin{align*}
+    &18,4 \pm 2,064 * (\frac{3,5}{\sqrt{25}})\\
+    &LS = 18,4 + 1,4448 \approx 19,85s\\
+    &LI = 18,4 - 1,4448 \approx 16,96s
+\end{align*}
+
+\[IC[16,96s\:;\:19,85s]\]\\[1em]
+
+Com um nível de confiança de 95\%, a média populacional do tempo de processamento de dados está entre $16,96s$ e $19,85s$.
+
+\end{document}
